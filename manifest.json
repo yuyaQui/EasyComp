@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "EasyComp",
+    "version": "1.0.1",
+    "description": "ブラウザ上で作問作業を完結。入力したクイズが連携したスプレッドシートに反映され、作業中にタブやウィンドウの切り替えをする手間をなくします。",
+    "icons": {
+        "16": "img/EasyComp_16.png",
+        "48": "img/EasyComp_48.png",
+        "128": "img/EasyComp_128.png"
+    },
+    "action": {
+        "default_icon": "img/EasyComp_16.png",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "storage",
+        "identity"
+    ],
+    "host_permissions": [
+        "https://sheets.googleapis.com/*"
+    ],
+    "oauth2": {
+        "client_id": "899809553435-ei3c6osk65n7ipjl9os3f8mnhe01m55p.apps.googleusercontent.com",
+        "scopes": [
+            "https://www.googleapis.com/auth/spreadsheets"
+        ]
+    }
+}

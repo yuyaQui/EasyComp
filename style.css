@@ -1,0 +1,21 @@
+html {
+    box-sizing: border-box;
+}
+
+a {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.button {
+    width: 4em;
+    height: 2em;
+    font-weight: bold;
+}
+
+.savetext {
+    display: none;
+    margin: 0px 10px;
+    font-weight: bold;
+    opacity: 40%;
+}
