@@ -13,19 +13,19 @@ let texttimer;
 
 document.addEventListener("DOMContentLoaded", () => {
     chrome.storage.local.get(["question"]).then((result) => {
-        text_question.value = result.question;
+        text_question.value = result.question || "";
     })
     chrome.storage.local.get(["answer"]).then((result) => {
-        text_answer.value = result.answer;
+        text_answer.value = result.answer || "";
     })
     chrome.storage.local.get(["supplement"]).then((result) => {
-        text_supplement.value = result.supplement;
+        text_supplement.value = result.supplement || "";
     })
     chrome.storage.local.get(["url"]).then((result) => {
-        text_url.value = result.url;
+        text_url.value = result.url || "";
     });
     chrome.storage.local.get(["spreadsheet"]).then((result) => {
-        text_spreadsheet.value = result.spreadsheet;
+        text_spreadsheet.value = result.spreadsheet || "";
     });
 });
 
