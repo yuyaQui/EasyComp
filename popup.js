@@ -33,10 +33,10 @@ text_areas.forEach(function (el, _) {
     el.addEventListener("keyup", () => {
         clearTimeout(savetimer);
         savetimer = setTimeout(() => {
-            ques = text_question.value;
-            ans = text_answer.value;
-            supple = text_supplement.value;
-            link = text_url.value;
+            let ques = text_question.value;
+            let ans = text_answer.value;
+            let supple = text_supplement.value;
+            let link = text_url.value;
             ss = text_spreadsheet.value;
             chrome.storage.local.set({ question: ques });
             chrome.storage.local.set({ answer: ans });
