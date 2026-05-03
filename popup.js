@@ -5,6 +5,7 @@ const text_question = document.querySelector('textarea[name="question"]');
 const text_answer = document.querySelector('textarea[name="answer"]');
 const text_supplement = document.querySelector('textarea[name="supplement"]');
 const text_url = document.querySelector('textarea[name="url"]');
+const text_spreadsheet = document.querySelector('textarea[name="spreadsheet"]');
 const text_saved = document.querySelector(".savetext");
 let button_abled = true;
 let savetimer;
@@ -23,6 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
     chrome.storage.local.get(["url"]).then((result) => {
         text_url.value = result.url;
     });
+    chrome.storage.local.get(["spreadsheet"]).then((result) => {
+        text_url.value = result.spreadsheet;
+    });
 });
 
 text_areas.forEach(function (el, _) {
@@ -33,10 +37,12 @@ text_areas.forEach(function (el, _) {
             ans = text_answer.value;
             supple = text_supplement.value;
             link = text_url.value;
+            ss = text_spreadsheet.value;
             chrome.storage.local.set({ question: ques });
             chrome.storage.local.set({ answer: ans });
             chrome.storage.local.set({ supplement: supple });
             chrome.storage.local.set({ url: link })
+            chrome.storage.local.set({ spreadsheet: ss })
             text_saved.style.display = "inline";
             clearTimeout(texttimer);
             setTimeout(() => {
@@ -74,9 +80,11 @@ button_add.addEventListener("click", async () => {
                 chrome.storage.local.set({ question: "" });
                 chrome.storage.local.set({ answer: "" });
                 chrome.storage.local.set({ supplement: "" });
+                chrome.storage.local.set({ spreadsheet: "" })
                 text_question.value = "";
                 text_answer.value = "";
                 text_supplement.value = "";
+                text_spreadsheet.value = "";
             } else {
                 const errorData = await response.json();
                 alert(`エラーが発生しました\n・URLは正しいですか？\n・スプレッドシートの編集権限はありますか？\n詳細：${errorData}`);
