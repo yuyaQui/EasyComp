@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "EasyComp",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "ブラウザ上で作問作業を完結。入力したクイズが連携したスプレッドシートに反映され、作業中にタブやウィンドウの切り替えをする手間をなくします。",
     "icons": {
         "16": "img/EasyComp_16.png",
