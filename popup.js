@@ -71,7 +71,7 @@ button_add.addEventListener("click", async () => {
                 },
                 body: JSON.stringify(
                     {
-                        "values": [[text_question.value, text_answer.value, text_supplement.value]]
+                        "values": [[text_question.value, text_answer.value, text_supplement.value, text_url.value]]
                     }
                 )
             })
@@ -80,11 +80,11 @@ button_add.addEventListener("click", async () => {
                 chrome.storage.local.set({ question: "" });
                 chrome.storage.local.set({ answer: "" });
                 chrome.storage.local.set({ supplement: "" });
-                chrome.storage.local.set({ spreadsheet: "" })
+                chrome.storage.local.set({ url: "" })
                 text_question.value = "";
                 text_answer.value = "";
                 text_supplement.value = "";
-                text_spreadsheet.value = "";
+                text_url.value = "";
             } else {
                 const errorData = await response.json();
                 alert(`エラーが発生しました\n・URLは正しいですか？\n・スプレッドシートの編集権限はありますか？\n詳細：${errorData}`);
