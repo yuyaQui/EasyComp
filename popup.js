@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         text_url.value = result.url;
     });
     chrome.storage.local.get(["spreadsheet"]).then((result) => {
-        text_url.value = result.spreadsheet;
+        text_spreadsheet.value = result.spreadsheet;
     });
 });
 
